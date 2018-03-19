@@ -1,0 +1,79 @@
+--ni 1
+SELECT &&colName FROM course_section
+ORDER BY &colName;
+
+--ni 2
+SELECT animal_name || '''s age and weight are: ' || 
+       animal_age || ' years old and ' || 
+       animal_weight || ' lbs.' AS "Animal Information"
+FROM animal
+WHERE animal_weight > (MONTHS_BETWEEN(TO_CHAR(SYSDATE,'Month dd, yyyy'), '&bday')/12)
+ORDER BY animal_weight;
+
+SELECT TO_CHAR(SYSDATE,'Month dd, yyyy') from dual;
+
+SELECT TO_DATE('December 25, 2015', 'Month DD, YYYY') from dual;
+
+ SELECT TO_CHAR(3500, '$00,999.99') from dual;
+ 
+ SELECT TO_DATE('25-DEC', 'DD-MON') FROM DUAL;
+ 
+ SELECT NVL(SUBSTR('AM I NULL', 15), 'YES I AM') from DUAL;
+ 
+ SELECT  TO_CHAR(21195, '999,999') from dual;
+ 
+ SELECT TO_NUMBER('1234.567', '9999.99') from dual;
+ 
+ SELECT 
+TO_CHAR('11111', '$99,999.99') from dual;
+
+SELECT TO_CHAR(hire_date, 'Month DD, RRRR') AS "Date Hired"
+FROM employees
+WHERE job_id LIKE 'IT%';
+
+SELECT TO_CHAR(hire_date, 'fmMonth DD, RRRR') AS "Date Hired"
+FROM employees
+WHERE job_id LIKE 'IT%';
+
+SELECT TO_CHAR(hire_date, 'Month DD, RRRR  HH:MI p.m.') AS "Date Hired"
+FROM employees
+WHERE job_id LIKE 'IT%';
+
+SELECT TO_CHAR(45.38, '99.9') FROM DUAL;
+SELECT TO_NUMBER(123.56, '999.9') FROM DUAL;
+
+SELECT TO_CHAR(SYSDATE, 'fmMonth, Year') FROM DUAL;
+
+SELECT NVL(SUBSTR('abc', 4), 'nothing') FROM DUAL;
+
+SELECT TO_CHAR(hire_date, 'Month DD, RRRR  HH24:MI') AS "Date Hired"
+FROM employees
+WHERE job_id LIKE 'IT%';
+
+SELECT TO_CHAR(hire_date, 'Month DD, RRRR DDD') AS "Date Hired"
+FROM employees
+WHERE job_id LIKE 'IT%';
+
+SELECT TO_CHAR(hire_date, 'Month DD, RRRR  D') AS "Date Hired"
+FROM employees
+WHERE job_id LIKE 'IT%';
+
+SELECT TO_CHAR(hire_date, 'Month DD, RRRR  Day') AS "Date Hired"
+FROM employees
+WHERE job_id LIKE 'IT%';
+
+SELECT TO_CHAR(hire_date, 'Month DDth, RRRR') AS "Date Hired"
+FROM employees
+WHERE job_id LIKE 'IT%';
+
+SELECT TO_CHAR(salary, '$99,999.99') 
+FROM employees
+WHERE job_id LIKE 'IT%';
+
+SELECT TO_CHAR(salary, '$999.99') 
+FROM employees
+WHERE job_id LIKE 'IT%';
+
+SELECT TO_CHAR(salary, 'L99G999D99') 
+FROM employees
+WHERE job_id LIKE 'IT%';
